@@ -1,58 +1,101 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img src="public/images/Logo_BathariSri.png" alt="BathariSri Logo" width="250">
 </p>
 
-## About Laravel
+<h1 align="center">BathariSri: Sistem Informasi Manajemen Pertanian Cerdas</h1>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<p align="center">
+  <strong>Aplikasi web modern untuk membantu petani mengelola lahan, mendeteksi penyakit tanaman, memprediksi hasil panen, dan mendapatkan rekomendasi pupuk secara cerdas.</strong>
+</p>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<p align="center">
+  <img src="https://img.shields.io/badge/Laravel-11-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel">
+  <img src="https://img.shields.io/badge/React-18-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind">
+</p>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## ✨ Fitur Utama
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- 🌿 **Manajemen Lahan & Penjadwalan Tanam**: Kelola data lahan pertanian dan pantau jadwal tanam secara real-time.
+- 🔍 **AI Disease Diagnosis (Pemindai Penyakit AI)**: Deteksi penyakit pada daun tanaman secara instan menggunakan teknologi _Image Recognition_.
+- 🌾 **Prediksi Panen Cerdas (Smart Harvest)**: Estimasi hasil panen berdasarkan algoritma Sistem Pendukung Keputusan (SPK) dan data historis.
+- 🧪 **Rekomendasi Pupuk (Smart Nursery)**: Dapatkan rekomendasi jenis dan dosis pupuk yang paling optimal untuk varietas tanaman yang dipilih.
+- ♻️ **Manajemen Limbah Pertanian (Smart Waste)**: Rekomendasi pengelolaan dan pemanfaatan limbah sisa panen untuk memberikan nilai tambah.
+- 📰 **Portal Artikel Edukasi**: Kumpulan artikel dan panduan praktis seputar agrikultur modern.
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🛠️ Teknologi yang Digunakan
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+- **Backend**: Laravel 11, PHP 8.3+
+- **Frontend**: React.js, Inertia.js, TailwindCSS, Vite
+- **Database**: SQLite (Default) / MySQL
+- **Lainnya**: Sistem autentikasi, SPK Algorithms
 
-## Agentic Development
+## 🚀 Panduan Instalasi (Local Development)
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+Ikuti langkah-langkah di bawah ini untuk menjalankan project BathariSri di environment lokal (komputer) Anda.
 
-```bash
-composer require laravel/boost --dev
+### Prasyarat Sistem
+Pastikan perangkat Anda sudah terinstal:
+- PHP >= 8.3 (dengan ekstensi `ext-gd` diaktifkan)
+- Node.js & NPM
+- Composer
 
-php artisan boost:install
-```
+### Langkah Instalasi
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+1. **Clone repository ini**
+   ```bash
+   git clone https://github.com/navyahmad/BathariSri.git
+   cd BathariSri
+   ```
 
-## Contributing
+2. **Install Dependensi Backend (PHP)**
+   ```bash
+   composer install --ignore-platform-req=php
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+3. **Install Dependensi Frontend (Node.js)**
+   ```bash
+   npm install --legacy-peer-deps
+   ```
 
-## Code of Conduct
+4. **Setup Environment Configuration**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+5. **Setup Database & Migrasi**
+   ```bash
+   php artisan migrate
+   ```
+   *(Pilih **Yes** jika ditanya untuk membuat file `database.sqlite` pertama kali)*
 
-## Security Vulnerabilities
+6. **Jalankan Aplikasi**
+   Jalankan server backend dan frontend secara bersamaan menggunakan perintah:
+   ```bash
+   composer run dev
+   ```
+   *(Jika perintah di atas bermasalah, Anda bisa menjalankannya di dua terminal terpisah: `php artisan serve` dan `npm run dev`)*
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Aplikasi sekarang dapat diakses di browser melalui: **`http://localhost:8000`**
 
-## License
+## 📸 Tampilan Aplikasi
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+| Fitur Utama | Smart Nursery | Smart Waste |
+|:---:|:---:|:---:|
+| <img src="public/images/feat-ai-diagnosis.png" width="250"> | <img src="public/images/feat-smart-nursery.png" width="250"> | <img src="public/images/feat-smart-waste.png" width="250"> |
+
+*(Gambar di atas adalah ilustrasi fitur yang tersedia di dalam aplikasi).*
+
+## 🤝 Berkontribusi
+Kami sangat terbuka dengan kontribusi! Jika Anda ingin menambahkan fitur, memperbaiki bug, atau meningkatkan kode, silakan:
+1. Lakukan *Fork* pada repository ini
+2. Buat branch fitur Anda (`git checkout -b fitur-baru-keren`)
+3. Commit perubahan Anda (`git commit -m 'Menambahkan fitur keren'`)
+4. Push ke branch (`git push origin fitur-baru-keren`)
+5. Buka sebuah *Pull Request*
+
+## 📄 Lisensi
+Project ini bersifat open-source dan berada di bawah lisensi [MIT](https://opensource.org/licenses/MIT).
